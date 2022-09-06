@@ -1,0 +1,33 @@
+<ActionBar title="Chats" >
+  </ActionBar>
+<GridLayout class="page__content" >
+    <RadListView [items]="fitems"
+        swipeActions="true" selectionBehavior="None"
+        (itemSwipeProgressStarted)="onSwipeCellStarted($event)"
+        (itemSwipeProgressEnded)="onSwipeCellFinished($event)"
+        (itemSwipeProgressChanged)="onSwipeCellChanged($event)"
+        (itemSwiping)="onItemSwiping($event)"
+        (loaded)="onListLoaded($event)"
+        recycleNativeView="always"  >
+        <ng-template tkListItemTemplate let-item="item" >
+        <StackLayout [nsRouterLink]="['../item', item?.id]" class="listItem" >
+            <chat-summary [chat]="item"></chat-summary>
+        </StackLayout>
+        </ng-template>
+        <!-- Hidden controls-->
+        <GridLayout *tkListItemSwipeTemplate columns="125, *, 125" rows="*"
+            class="gridLayoutLayout" >
+
+            <FlexboxLayout id="mark-view" col="0" row="0" class="markViewStackLayout"
+                (tap)="onLeftSwipeClick($event)" alignItems="center" justifyContent="flex-start">
+                <Label text="&#xf192; &nbsp; Mark" class="swipeTemplateLabelLeft far"
+                    ></Label>
+            </FlexboxLayout>
+            <FlexboxLayout id="delete-view" col="2" row="0" class="deleteViewStackLayout"
+                (tap)="onRightSwipeClick($event)" alignItems="center" justifyContent="flex-end">
+                <Label text="Delete &nbsp; &#xf2ed;" class="swipeTemplateLabelRight far"
+                    ></Label>
+            </FlexboxLayout>
+        </GridLayout>
+    </RadListView>
+</GridLayout>

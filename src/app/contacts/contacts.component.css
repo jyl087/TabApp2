@@ -1,0 +1,56 @@
+SearchBar {
+    font-size: 12;
+}
+
+.button-label {
+    margin:15 0 3 7;
+}
+
+.description-text {
+    border-top-color: #cccccc;
+    border-top-width: 1;
+    padding:5;
+}
+
+.listItem {
+    border-bottom: 1 solid #0e4375;
+    background-color: white;
+    height:44;
+    padding: 0 15;
+    vertical-align: middle;
+}
+
+.gridLayoutLayout {
+    background-color: white;
+    border: 1 solid black;
+    padding: 0;
+    margin: 0;
+}
+
+.markViewStackLayout {
+    background-color: #673ab7;
+    margin: 0;
+    padding: 0;
+}
+
+.deleteViewStackLayout {
+    background-color: #f44336;
+    margin: 0;
+    padding: 0;
+}
+
+.swipeTemplateLabelLeft {
+    font-size: 12;
+    color: white;
+    padding: 15 0 0 10;
+    margin: 0;
+    text-align: left;
+}
+
+.swipeTemplateLabelRight {
+    font-size: 12;
+    color: white;
+    padding: 15 10 0 0;
+    margin: 0;
+    text-align: right;
+}

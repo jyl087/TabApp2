@@ -1,0 +1,15 @@
+<ActionBar title="Recents"></ActionBar>
+
+<StackLayout class="page__content" >
+    <RadListView [items]="fitems" height="100%"
+        (loaded)="onListLoaded($event)"
+        pullToRefresh="true"  (pullToRefreshInitiated)="onStartPullToRefresh($event)"
+        loadOnDemandMode="Manual"  (loadMoreDataRequested)="onLoadMoreItems($event)"
+        recycleNativeView="always"  >
+        <ng-template tkListItemTemplate let-item="item">
+            <StackLayout [nsRouterLink]="['../item', item?.id]" class="listItem">
+                <call-summary [call]="item"></call-summary>
+            </StackLayout>
+        </ng-template>
+    </RadListView>
+</StackLayout>

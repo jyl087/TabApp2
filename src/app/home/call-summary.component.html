@@ -1,0 +1,16 @@
+<FlexboxLayout alignItems="center" alignContent="center"
+    flexwrap="nowrap" justifyContent="space-between">
+
+    <Image src="res://baselinecontactpageblack48dp" width="16" height="16"
+        tintColor="#aaaaaa" stretch="fill" flexGrow="0"></Image>
+
+    <Label text="&#xf2bb;" class="fas" style="color:#777; font-size:larger;"
+        flexGrow="0" flexShrink="0" ></Label>
+    <Label text="{{call?.from}}" style="font-weight:bold; font-size:15;"
+        width="60%" flexGrow="2" flexShrink="3"
+        ></Label>
+    <Label text="{{call?.tel}}"
+        width="40%" flexGrow="2" flexShrink="3"
+        ></Label>
+
+</FlexboxLayout>

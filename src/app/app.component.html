@@ -1,0 +1,37 @@
+<GridLayout rows="*,auto" #topview >
+    <StackLayout [hidden]='activeTab!=0' row="0" col="0">
+      <page-router-outlet name="homeTab"></page-router-outlet>
+    </StackLayout>
+    <StackLayout [hidden]="activeTab!=1" row="0" col="0">
+      <page-router-outlet name="contactsTab"></page-router-outlet>
+    </StackLayout>
+    <!--
+    <StackLayout [hidden]="activeTab!=2" row="0" col="0">
+      <page-router-outlet name="keypadTab"></page-router-outlet>
+    </StackLayout>
+    <StackLayout [hidden]="activeTab!=3" row="0" col="0">
+      <page-router-outlet name="vmailTab"></page-router-outlet>
+    </StackLayout> -->
+    <StackLayout [hidden]="activeTab!=2" row="0" col="0">
+      <page-router-outlet name="chatsTab"></page-router-outlet>
+    </StackLayout>
+    <BottomNavigationBar #maintab [visibility]="tabVisible"
+        class="navBar"
+        activeColor="#770000"
+        unloadOnTabChange="false"
+        inactiveColor="#ffaaaa"
+        backgroundColor="#f0f0f0"
+        (loaded)="onBottomNavigationLoaded($event)"
+        (tabSelected)="onBottomNavigationTabSelected($event)"
+        (tabPressed)="onBottomNavigationTabPressed($event)"
+        row="1" col="0"
+    >
+        <BottomNavigationTab title="Calls" icon="res://baselinecallblack48dp"></BottomNavigationTab>
+        <BottomNavigationTab title="Contacts" icon="res://baselinecontactsblack48dp" ></BottomNavigationTab>
+<!--
+        <BottomNavigationTab title="Keypad" icon="res://baselinedialpadblack48dp" ></BottomNavigationTab>
+        <BottomNavigationTab title="Voicemail" icon="res://baselinevoicemailblack48dp"></BottomNavigationTab>
+-->
+        <BottomNavigationTab title="Chats" icon="res://baseline_video_chat_black_48"></BottomNavigationTab>
+    </BottomNavigationBar>
+</GridLayout>

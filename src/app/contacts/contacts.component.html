@@ -1,0 +1,39 @@
+<ActionBar title="Contacts">
+    <ActionItem
+          [nsRouterLink]="['../ctedit/NEW']"
+          ios.systemIcon="4"
+          ios.position="right"
+          android.systemIcon="ic_menu_add"
+          android.position="actionBar"
+      ></ActionItem>
+</ActionBar>
+
+<GridLayout class="page__content" columns="*" rows="*"
+    (tap)="onParentTap($event)">
+    <RadListView [items]="contacts" row="0" col="0"
+        swipeActions="true" selectionBehavior="None"
+        (itemSwipeProgressStarted)="onSwipeCellStarted($event)"
+        (itemSwipeProgressEnded)="onSwipeCellFinished($event)"
+        (itemSwipeProgressChanged)="onSwipeCellChanged($event)"
+        (itemSwiping)="onItemSwiping($event)"   >
+        <ng-template tkListITemTemplate let-item="item">
+        <StackLayout [nsRouterLink]="['../ctedit', item?.id ]" class="listItem" height="44">
+            <contact-summary [contact]="item"></contact-summary>
+        </StackLayout>
+        </ng-template>
+        <!-- Hidden controls-->
+        <GridLayout *tkListItemSwipeTemplate columns="125, *, 125"
+            class="gridLayoutLayout" >
+            <StackLayout id="mark-view" col="0" class="markViewStackLayout"
+                (tap)="onLeftSwipeClick($event)">
+                <Label text="&#xf192; &nbsp; Mark" class="swipeTemplateLabelLeft far"
+                    ></Label>
+            </StackLayout>
+            <StackLayout id="delete-view" col="2" class="deleteViewStackLayout"
+                (tap)="onRightSwipeClick($event)">
+                <Label text="Delete &nbsp; &#xf2ed;" class="swipeTemplateLabelRight far"
+                    ></Label>
+            </StackLayout>
+        </GridLayout>
+    </RadListView>
+</GridLayout>

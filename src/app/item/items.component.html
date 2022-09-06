@@ -1,0 +1,15 @@
+<ActionBar title="My App"> </ActionBar>
+
+<GridLayout>
+  <RadListView [items]="items"
+    selectionBehavior="None"
+    (loaded)="onListLoaded($event)"
+    recycleNativeView="always"
+    >
+    <ng-template let-item="item" tkListItemTemplate>
+      <StackLayout [nsRouterLink]="['/item', item.id]">
+        <Label [text]="item.name"></Label>
+      </StackLayout>
+    </ng-template>
+  </RadListView>
+</GridLayout>

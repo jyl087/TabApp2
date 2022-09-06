@@ -1,0 +1,89 @@
+.iconButton {
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    height:50;
+    width: 50;
+    padding:0;
+    border-radius: 50%;
+}
+
+.listItem {
+    background-color: white;
+    padding:0;
+    margin:0;
+    border: 1px solid black;
+    color:black;
+}
+
+.listComment {
+    font-size: 12;
+    padding-left:5;
+    margin-left:0;
+    color:#555;
+}
+
+.listCommentAudioLen {
+    color: #553333;
+    padding: 0 0 0 10;
+    font-size: 11;
+}
+
+.fitemNew {
+    font-weight: bold;
+}
+
+.fitemLarger {
+    font-size: 16;
+    margin: 0;
+    padding: 5 0 0 0;
+}
+
+.fitemDate {
+    margin:0;
+    padding:5 5 0 0;
+}
+
+.fitemCard {
+    background-color:#eeeeee;
+    padding:10;
+    margin:15 10;
+    border-radius: 12;
+}
+
+.fitemOrigCmt {
+    background-color:#fafafa;
+    margin:5 0;
+    padding:10;
+    border-radius:5;
+}
+
+.itemBorder {
+    background-color:#ccf;
+    height: 1;
+    margin-top:5;
+}
+
+.cmtHead {
+    margin-top:25;
+    padding:10;
+    border-bottom-color:black;
+    border-bottom-style:solid;
+    border-bottom-width:1;
+}
+
+.cmtLabel {
+    color:#777777;
+    margin-top:10;
+}
+
+.cmtBody {
+    margin:0 10 15 10;
+}
+
+.mediaSpec {
+    background-color: #ebb;
+    border-radius: 5;
+    padding:5;
+}
